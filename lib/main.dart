@@ -1,6 +1,5 @@
-import 'package:first_webapp/mobile_view.dart';
+
 import 'package:first_webapp/screens/home/home_screen.dart';
-import 'package:first_webapp/web_view.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -15,10 +14,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Mustafa\'s Website',
-      theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
+      darkTheme: ThemeData(
+        fontFamily: 'Montserrat',
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        primarySwatch: Colors.deepOrange,
       ),
-      home: home_Screen(),
+      theme: ThemeData(
+        fontFamily: 'Montserrat',
+        primarySwatch: Colors.deepOrange,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      themeMode: ThemeMode.dark,
+      home: const HomePage(),
       // LayoutBuilder(builder:(BuildContext context, BoxConstraints constraints)
       //     {
       //       print(constraints.minHeight.round());
@@ -28,11 +35,11 @@ class MyApp extends StatelessWidget {
       //             textScaleFactor: 0.8,
       //
       //           ),
-      //             child: MobileView()
+      //             child:  HomeScreen()
       //         );
       //       }
       //
-      //       return const WebView();
+      //       return  HomeScreen();
       //
       //     },
       // ),
